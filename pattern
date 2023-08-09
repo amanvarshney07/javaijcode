@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public classPattern1 {
+    public static void main(String[]args){
+        int rows=5,i,j,n;
+        Scanner Sc = new Scanner(System.in);
+        n= Sc.nextInt();
+        for(i=1;i<=rows;i++){
+            for(j=1;j<=i;j++){
+                System.out.print("1");
+            }
+            System.out.println();
+        }
+    }
+}
