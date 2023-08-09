@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class reverseno {
+    public static void main(String[]args){
+        int n,r,r2,n2;
+        Scanner Sc=new Scanner(System.in);
+        n = Sc.nextInt();
+        n2=n;
+        r = 0;
+        while(n>0){
+            r2=n%10;
+            r=r*10+r2;
+            n=n/10;
+        }
+        if (n2==r){
+            System.out.println("yes");
+        }else{
+            System.out.println("no");
+        }
+    }
+}
+
