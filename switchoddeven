@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class odd_even {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        int num = 0;
+        System.out.println("enter the numebr");
+        num = Sc.nextInt();
+        switch(num%2==0?1:0){
+            case 0:
+                System.out.println("the number is odd");
+                break;
+            case 1 :
+                System.out.println("the number is even");
+                break;
+        }
+    }
+    
+}
