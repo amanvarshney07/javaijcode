@@ -1,0 +1,22 @@
+import java.util.Scanner;
+public class alphabet {
+    public static void main(String[] args) {
+        Scanner Sc = new Scanner(System.in);
+        System.out.println("enter the alphabet");
+        char alphabet = Sc.next().charAt(0);
+        
+        switch(alphabet){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                System.out.println(alphabet+"is a vowel");
+                break;
+            default:
+                   System.out.println("alphabet is a consonent");
+                   break;
+        }
+    }
+    
+}
