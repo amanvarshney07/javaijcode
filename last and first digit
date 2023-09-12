@@ -1,0 +1,19 @@
+import java .util.*;
+public class Main
+{
+    public static void main(String[]args){
+      int rem=0,n,count=0;
+       Scanner Sc = new Scanner(System.in);
+        n = Sc.nextInt();
+        int ld = n%10;
+        System.out.println(ld);
+        while(n>0){
+            rem=n%10;
+            count=count+1;
+            n=n/10;
+        }
+         System.out.println(rem);
+           }
+    }
+
+    
