@@ -1,0 +1,9 @@
+import java.util.*;
+public class Main{
+    public static void main(String[]args){
+       String firstName = "Aman";
+       String lastName = "Varshney";
+       String fullName = firstName + " " + lastName;
+       System.out.println(fullName);
+    }
+}
