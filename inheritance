@@ -1,0 +1,23 @@
+class A{
+    void get(){
+        System.out.println("get methode calling");
+    }
+}
+class B extends A{
+    void display(){
+        System.out.println("display called");
+    }
+}
+
+class inheritance{
+    public static void main(String[]args){
+        A a = new A();
+        a.get();
+        
+        B b = new B();
+        b.get();
+        b.display();
+        
+        
+    }
+}
