@@ -1,0 +1,17 @@
+class Main
+{
+    int Rollno;
+    String name;
+    void get(int Rollno, String name){
+        this.Rollno = Rollno;
+        this.name = name;
+    }
+    void display(){
+        System.out.println(Rollno+" "+name);
+    }
+    public static void main(String[]args){
+        Main A = new Main();
+        A.get(24,"Riya");
+        A.display();
+    }
+}
