@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class LargestSumContiguousSubarray {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+       
+        String[] input = scanner.nextLine().split(" ");
+        int[] arr = new int[input.length];
+        for (int i = 0; i < input.length; i++) {
+            arr[i] = Integer.parseInt(input[i]);
+        }
+
+        
+        int size = scanner.nextInt();
+
+        
+        int maxSoFar = arr[0];
+        int maxEndingHere = arr[0];
+        int start = 0;
+        int end = 0;
+
+        for (int i = 1; i < size; i++) {
+            if (maxEndingHere < 0) {
+                maxEndingHere = arr[i];
+                start = i;
+            } else {
+                maxEndingHere += arr[i];
+            }
+
+            if (maxEndingHere > maxSoFar) {
+                maxSoFar = maxEndingHere;
+                end = i;
+            }
+        }
+
+        
+        System.out.println(maxSoFar);
+
+       
+        for (int i = start; i <= end; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
