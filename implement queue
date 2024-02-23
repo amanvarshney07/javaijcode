@@ -1,0 +1,59 @@
+package queue;
+// implement a queue using rear and front elements.
+public class Queue {
+    //we need to create some instance variabels.
+    private ListNode front;
+    private ListNode rear;
+    private int size;
+    // here we will create an inner class.
+    public Queue(){
+        this.front = null;
+        this.rear = null;
+        this.size = 0;
+    }
+    private class ListNode{
+        //to represent ListNode we besically keep two things data and reference to the next ListNode.
+        private int data;
+        private ListNode next;
+        public ListNode(int data){
+            this.data = data;
+            this.next = null;
+        }
+    }
+    public int size(){
+        return size;
+    }
+    public boolean isEmpty(){
+        return size == 0;
+    }
+    public void enqueue(int data){
+        ListNode temp  = new ListNode(data); //temporary ListNode
+        if(isEmpty()){
+            front = temp;
+        }else {
+            rear.next = temp;
+        }
+        rear = temp;
+        size++;
+    }//to demonstrate enqueue method i will create another print method which actuall print the vale in queue.
+    public void print(){
+        if(isEmpty()){
+            return;
+        }
+        ListNode current = front;//traversing each node.
+        while(current!=null){
+            System.out.print(current.data+"-->");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
+    public static void main(String[] args) {
+        Queue queue = new Queue();
+        queue.enqueue(10);
+        queue.enqueue(15);
+        queue.enqueue(20);
+        queue.enqueue(25);
+        queue.print();
+    }
+}
