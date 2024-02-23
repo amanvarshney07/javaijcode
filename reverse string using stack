@@ -1,0 +1,23 @@
+package main;
+import java.util.Stack;
+public class StringReverse {
+    public static String reverse(String str){  //static method which return String
+        Stack<Character> stack = new Stack<>();   //instance of Stack
+        char[] chars = str.toCharArray(); //convert string into character array. toCharArray convert string into array and assign it into chars.
+        for(char c : chars){ //iterate char array one by one.
+            stack.push(c);
+        }
+        for(int i=0; i<str.length();i++){
+            chars[i] = stack.pop();
+        }
+        return new String(chars);
+    }
+    public static void main(String[] args) {
+        String str = "ABCD";
+        String stri = "KLMN";
+        System.out.println("before reverse = " + stri);
+        System.out.println("before reverse = " + str);
+        System.out.println("after reverse = " + reverse(stri));
+        System.out.println("after reverse = " + reverse(str));
+    }
+}
