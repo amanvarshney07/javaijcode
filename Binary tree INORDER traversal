@@ -1,0 +1,65 @@
+package binarytree;
+
+import java.util.Stack;
+
+public class BinaryTreeInOrder {
+    private TreeNode root;
+    private class TreeNode{
+        private int data;
+        private TreeNode left;
+        private TreeNode right;
+        public TreeNode(int data){
+            this.data = data;
+        }
+    }
+    public void createBinaryTree(){
+        TreeNode first = new TreeNode(7);
+        TreeNode second = new TreeNode(8);
+        TreeNode third = new TreeNode(9);
+        TreeNode fourth = new TreeNode(10);
+        TreeNode fifth = new TreeNode(11);
+        TreeNode sixth = new TreeNode(12);
+        TreeNode seventh = new TreeNode(13);
+        root = first; //root--->first
+        first.left = second;
+        first.right = third;//second<---first--->third
+
+        second.left = fourth;
+        second.right = sixth;
+        third.left = fifth;
+        third.right = seventh;
+    }
+// Using Recursive method.
+    public void inOrder(TreeNode root){
+        if(root==null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
+    // Iterative method for inorder traversal.
+    public void inOrder(){
+        if(root==null){
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = root;
+        while (!stack.isEmpty()||temp!=null){
+            if(temp!=null){
+                stack.push(temp);
+                temp = temp.left;
+            }else{
+                temp = stack.pop();
+                System.out.print(temp.data + " ");
+                temp = temp.right;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
+        binaryTreeInOrder.createBinaryTree();
+        binaryTreeInOrder.inOrder(binaryTreeInOrder.root);// for recursive method.
+        binaryTreeInOrder.inOrder();//for iterative method.
+    }
+}
